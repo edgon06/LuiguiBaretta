@@ -1,0 +1,14 @@
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\bin\Release\LuiguiBaretta.exe.config
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\bin\Release\LuiguiBaretta.exe
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\bin\Release\LuiguiBaretta.pdb
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\bin\Release\Microsoft.ReportViewer.Common.dll
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\bin\Release\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\bin\Release\Microsoft.SqlServer.Types.dll
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\obj\Release\LuiguiBaretta.csprojAssemblyReference.cache
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\obj\Release\LuiguiBaretta.Ventana_Prinsipal.resources
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\obj\Release\LuiguiBaretta.Properties.Resources.resources
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\obj\Release\LuiguiBaretta.csproj.GenerateResource.cache
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\obj\Release\LuiguiBaretta.csproj.CopyComplete
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\obj\Release\LuiguiBaretta.exe
+C:\Users\Jose\Documents\Programas\Nueva vista\LuiguiBaretta\obj\Release\LuiguiBaretta.pdb
