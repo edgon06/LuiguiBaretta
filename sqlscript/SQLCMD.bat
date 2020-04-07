@@ -1,2 +1,0 @@
-sqlcmd 
-PAUSE
