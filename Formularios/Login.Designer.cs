@@ -38,7 +38,7 @@
             // 
             // Aceptar
             // 
-            this.Aceptar.Location = new System.Drawing.Point(135, 134);
+            this.Aceptar.Location = new System.Drawing.Point(135, 133);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(75, 23);
             this.Aceptar.TabIndex = 9;

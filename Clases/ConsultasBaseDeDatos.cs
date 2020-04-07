@@ -11,7 +11,7 @@ namespace LuiguiBaretta
 {
     class ConsultasBaseDeDatos
     {
-        //static string CadenaConexion = "Data = LAPTOP-JEEI4HN0;Initial Catalog=LuiguiBaretta;Integrated Security=True";
+        //public static string CadenaConexion = "Data Source=" + System.Environment.MachineName + ";Initial Catalog=LuiguiBaretta;Integrated Security=True";
         public static string CadenaConexion;
 
         public static DataTable ObtenerTablaDeBDLuiguibaretta(string Sentencia)

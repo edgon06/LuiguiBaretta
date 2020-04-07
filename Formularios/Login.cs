@@ -20,7 +20,7 @@ namespace LuiguiBaretta
 
         private void login_Load(object sender, EventArgs e)
         {
-            this.User.DataSource = ConsultasBaseDeDatos.loginarametre("select * from master.sys.sql_logins where default_database_name='LuiguiBaretta'");
+            this.User.DataSource = ConsultasBaseDeDatos.loginarametre("select name from master.sys.syslogins where dbname = 'LuiguiBaretta'");
             this.User.DisplayMember = "name";
         }
 
@@ -39,5 +39,6 @@ namespace LuiguiBaretta
                 MessageBox.Show(ex.Message, "Usuario o contraseña incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
