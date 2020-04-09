@@ -30,7 +30,7 @@ namespace LuiguiBaretta
         {
             try
             {
-                SqlConnection objcon = new SqlConnection("Data Source = "+ System.Environment.MachineName + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";");
+                SqlConnection objcon = new SqlConnection("Data Source = "+ this.comboBoxServidores.Text + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";");
                 objcon.Open();
                 objcon.Close();
                 ConsultasBaseDeDatos.ServerName = this.comboBoxServidores.Text;
