@@ -33,8 +33,8 @@ namespace LuiguiBaretta
                 SqlConnection objcon = new SqlConnection("Data Source = "+ System.Environment.MachineName + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";");
                 objcon.Open();
                 objcon.Close();
-                ConsultasBaseDeDatos.CadenaConexion = "Data Source = " + System.Environment.MachineName + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";";
                 ConsultasBaseDeDatos.ServerName = this.comboBoxServidores.Text;
+                ConsultasBaseDeDatos.CadenaConexion = "Data Source = " + this.comboBoxServidores.Text + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";";
                 this.Close();
             }
             catch (System.Exception ex)
