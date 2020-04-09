@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using LuiguiBaretta.Clases;
+using System.Data.Sql;
+
+
 
 namespace LuiguiBaretta
 {
@@ -20,18 +17,24 @@ namespace LuiguiBaretta
 
         private void login_Load(object sender, EventArgs e)
         {
-            this.User.DataSource = ConsultasBaseDeDatos.loginarametre("select name from master.sys.syslogins where dbname = 'LuiguiBaretta'");
-            this.User.DisplayMember = "name";
+            SqlDataSourceEnumerator servidores = SqlDataSourceEnumerator.Instance;
+
+            this.comboBoxServidores.DataSource = servidores.GetDataSources();
+            this.comboBoxServidores.DisplayMember = "ServerName";
+
+            this.comboboxUser.DataSource = ConsultasBaseDeDatos.loginarametre("select name from master.sys.syslogins where dbname = 'LuiguiBaretta'");
+            this.comboboxUser.DisplayMember = "name";
         }
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
             try
             {
-                SqlConnection objcon = new SqlConnection("Data Source = "+ System.Environment.MachineName + "; User ID=" + this.User.Text + ";Password=" + this.Password.Text + ";");
+                SqlConnection objcon = new SqlConnection("Data Source = "+ System.Environment.MachineName + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";");
                 objcon.Open();
                 objcon.Close();
-                ConsultasBaseDeDatos.CadenaConexion = "Data Source = " + System.Environment.MachineName + "; User ID=" + this.User.Text + ";Password=" + this.Password.Text + ";";
+                ConsultasBaseDeDatos.CadenaConexion = "Data Source = " + System.Environment.MachineName + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";";
+                ConsultasBaseDeDatos.ServerName = this.comboBoxServidores.Text;
                 this.Close();
             }
             catch (System.Exception ex)

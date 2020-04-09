@@ -30,56 +30,58 @@
         {
             this.Aceptar = new System.Windows.Forms.Button();
             this.Contraseña = new System.Windows.Forms.Label();
-            this.Password = new System.Windows.Forms.TextBox();
-            this.User = new System.Windows.Forms.ComboBox();
+            this.texboxPassword = new System.Windows.Forms.TextBox();
+            this.comboboxUser = new System.Windows.Forms.ComboBox();
             this.Usuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelServidor = new System.Windows.Forms.Label();
+            this.comboBoxServidores = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Aceptar
             // 
-            this.Aceptar.Location = new System.Drawing.Point(135, 133);
+            this.Aceptar.Location = new System.Drawing.Point(170, 175);
             this.Aceptar.Name = "Aceptar";
-            this.Aceptar.Size = new System.Drawing.Size(75, 23);
+            this.Aceptar.Size = new System.Drawing.Size(109, 23);
             this.Aceptar.TabIndex = 9;
-            this.Aceptar.Text = "Aceptar";
+            this.Aceptar.Text = "Iniciar Sesión";
             this.Aceptar.UseVisualStyleBackColor = true;
             this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // Contraseña
             // 
             this.Contraseña.AutoSize = true;
-            this.Contraseña.Location = new System.Drawing.Point(48, 101);
+            this.Contraseña.Location = new System.Drawing.Point(47, 140);
             this.Contraseña.Name = "Contraseña";
-            this.Contraseña.Size = new System.Drawing.Size(61, 13);
+            this.Contraseña.Size = new System.Drawing.Size(64, 13);
             this.Contraseña.TabIndex = 8;
-            this.Contraseña.Text = "Contraseña";
+            this.Contraseña.Text = "Contraseña:";
             // 
-            // Password
+            // texboxPassword
             // 
-            this.Password.Location = new System.Drawing.Point(117, 98);
-            this.Password.Name = "Password";
-            this.Password.PasswordChar = '*';
-            this.Password.Size = new System.Drawing.Size(160, 20);
-            this.Password.TabIndex = 7;
+            this.texboxPassword.Location = new System.Drawing.Point(119, 137);
+            this.texboxPassword.Name = "texboxPassword";
+            this.texboxPassword.PasswordChar = '*';
+            this.texboxPassword.Size = new System.Drawing.Size(160, 20);
+            this.texboxPassword.TabIndex = 7;
             // 
-            // User
+            // comboboxUser
             // 
-            this.User.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.User.FormattingEnabled = true;
-            this.User.Location = new System.Drawing.Point(117, 56);
-            this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(160, 21);
-            this.User.TabIndex = 6;
+            this.comboboxUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboboxUser.FormattingEnabled = true;
+            this.comboboxUser.Location = new System.Drawing.Point(119, 110);
+            this.comboboxUser.Name = "comboboxUser";
+            this.comboboxUser.Size = new System.Drawing.Size(160, 21);
+            this.comboboxUser.TabIndex = 6;
             // 
             // Usuario
             // 
             this.Usuario.AutoSize = true;
-            this.Usuario.Location = new System.Drawing.Point(48, 59);
+            this.Usuario.Location = new System.Drawing.Point(47, 113);
             this.Usuario.Name = "Usuario";
-            this.Usuario.Size = new System.Drawing.Size(43, 13);
+            this.Usuario.Size = new System.Drawing.Size(46, 13);
             this.Usuario.TabIndex = 5;
-            this.Usuario.Text = "Usuario";
+            this.Usuario.Text = "Usuario:";
             // 
             // label1
             // 
@@ -90,16 +92,36 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Inicio de seción";
             // 
+            // labelServidor
+            // 
+            this.labelServidor.AutoSize = true;
+            this.labelServidor.Location = new System.Drawing.Point(47, 85);
+            this.labelServidor.Name = "labelServidor";
+            this.labelServidor.Size = new System.Drawing.Size(49, 13);
+            this.labelServidor.TabIndex = 11;
+            this.labelServidor.Text = "Servidor:";
+            // 
+            // comboBoxServidores
+            // 
+            this.comboBoxServidores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxServidores.FormattingEnabled = true;
+            this.comboBoxServidores.Location = new System.Drawing.Point(119, 82);
+            this.comboBoxServidores.Name = "comboBoxServidores";
+            this.comboBoxServidores.Size = new System.Drawing.Size(160, 21);
+            this.comboBoxServidores.TabIndex = 12;
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 177);
+            this.ClientSize = new System.Drawing.Size(344, 228);
+            this.Controls.Add(this.comboBoxServidores);
+            this.Controls.Add(this.labelServidor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Aceptar);
             this.Controls.Add(this.Contraseña);
-            this.Controls.Add(this.Password);
-            this.Controls.Add(this.User);
+            this.Controls.Add(this.texboxPassword);
+            this.Controls.Add(this.comboboxUser);
             this.Controls.Add(this.Usuario);
             this.Name = "login";
             this.Text = "Inicio de seción";
@@ -113,9 +135,11 @@
 
         private System.Windows.Forms.Button Aceptar;
         private System.Windows.Forms.Label Contraseña;
-        private System.Windows.Forms.TextBox Password;
-        private System.Windows.Forms.ComboBox User;
+        private System.Windows.Forms.TextBox texboxPassword;
+        private System.Windows.Forms.ComboBox comboboxUser;
         private System.Windows.Forms.Label Usuario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelServidor;
+        public System.Windows.Forms.ComboBox comboBoxServidores;
     }
 }

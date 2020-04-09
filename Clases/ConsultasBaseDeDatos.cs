@@ -13,6 +13,7 @@ namespace LuiguiBaretta
     {
         //public static string CadenaConexion = "Data Source=" + System.Environment.MachineName + ";Initial Catalog=LuiguiBaretta;Integrated Security=True";
         public static string CadenaConexion;
+        public static string ServerName;
 
         public static DataTable ObtenerTablaDeBDLuiguibaretta(string Sentencia)
         {
@@ -50,9 +51,9 @@ namespace LuiguiBaretta
                 }
                 objcon.Close();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message, Sentencia, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Sentencia, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return Valor;
         }
@@ -76,7 +77,7 @@ namespace LuiguiBaretta
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message, Sentencia, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Sentencia, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return Valor;
         }
@@ -100,7 +101,7 @@ namespace LuiguiBaretta
 
         public static bool Creacion_base_de_datos()
         {
-            SqlConnection conexion = new SqlConnection("Data Source=" + System.Environment.MachineName + ";Initial Catalog=LuiguiBaretta;Integrated Security=True");
+            SqlConnection conexion = new SqlConnection("Data Source=" + ServerName + ";Initial Catalog=LuiguiBaretta;Integrated Security=True");
             try
             {
                 conexion.Open();
@@ -110,7 +111,7 @@ namespace LuiguiBaretta
             {
                 if (MessageBox.Show("¿Desea crear la base de datos?", "No hay base de datos existente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    conexion = new SqlConnection("Data Source=" + System.Environment.MachineName + ";Initial Catalog=master;Integrated Security=True");
+                    conexion = new SqlConnection("Data Source=" + ServerName + ";Initial Catalog=master;Integrated Security=True");
                     try
                     {
                         SqlCommand creación = new SqlCommand("Create database LuiguiBaretta", conexion);
@@ -189,7 +190,7 @@ namespace LuiguiBaretta
             DataSet DataTabla = new DataSet("Tabla");
             try
             {
-                SqlConnection objcon = new SqlConnection("Data Source = " + System.Environment.MachineName + ";Initial Catalog=master;Integrated Security=True");
+                SqlConnection objcon = new SqlConnection("Data Source = " + ServerName + ";Initial Catalog=master;Integrated Security=True");
                 objcon.Open();
                 SqlDataAdapter data = new SqlDataAdapter(Sentencia, objcon);
                 objcon.Close();
