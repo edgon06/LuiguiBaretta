@@ -39,7 +39,7 @@ namespace LuiguiBaretta
 
                 this.Close();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Usuario o contraseña incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

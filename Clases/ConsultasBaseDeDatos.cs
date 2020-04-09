@@ -118,56 +118,7 @@ namespace LuiguiBaretta
                         conexion.Open();
                         creación.ExecuteNonQuery();
                         conexion.Close();
-                        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        //conexion = new SqlConnection("Data Source=" + System.Environment.MachineName + ";Initial Catalog=LuiguiBaretta;Integrated Security=True");
-                        //SqlCommand creacion = new SqlCommand("Create Table Producto( " +
-                        //        "Id_Producto int Primary key not null, " +
-                        //        "Codigo varchar(20), " +
-                        //        "Referencia varchar(10), " +
-                        //        "Descripcion varchar(50), " +
-                        //        "Talla varchar(5), " +
-                        //        "PrecioVenta Decimal Default 0, " +
-                        //        "GrupoPrimavera Decimal Default 0, " +
-                        //        "CasaFaska Decimal Default 0, " +
-                        //        "Cantidad Decimal Default 0, " +
-                        //        "CantidadPaquete Decimal Default 0, " +
-                        //        "GrupoPaquete int Default 0) " +
-                        //    "Create Table ProveerProducto( " +
-                        //        "ID_Recarga int Primary key not null, " +
-                        //        "ID_Producto int, " +
-                        //        "Cantidad Decimal Default 0, " +
-                        //        "Fecha Date " +
-                        //        "Foreign key(ID_Producto) references Producto(ID_Producto)) " +
-                        //    "Create table Cliente( " +
-                        //        "ID_Cliente int Primary key not null, " +
-                        //        "Almacen Varchar(50), " +
-                        //        "Direccion Varchar(50), " +
-                        //        "Telefono Varchar(50), " +
-                        //        "RUC text, " +
-                        //        "Razon_Social text) " +
-                        //    "Create Table Venta( " +
-                        //        "ID_Venta int IDENTITY(0, 1) Primary key not null, " +
-                        //        "Cliente int, " +
-                        //        "Fecha date, " +
-                        //        "Total Decimal Default 0, " +
-                        //        "Pago Decimal Default 0 " +
-                        //        "Foreign key(Cliente) references Cliente(ID_Cliente)) " +
-                        //    "Create Table VentaProducto( " +
-                        //        "ID_Venta int, " +
-                        //        "ID_Producto int, " +
-                        //        "Cantidad int Default 0 " +
-                        //        "Foreign key(ID_Producto) references Producto(ID_Producto), " +
-                        //        "Foreign key(ID_Venta) references Venta(ID_Venta)) ", conexion);
-                        //conexion.Open();
-                        //creacion.ExecuteNonQuery();
-                        //conexion.Close();
-                        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        //"Insert into ProveerProducto(ID_Recarga, Id_Producto, Cantidad, Fecha) values (0,0,0,'" + DateTime.Now.ToString("yyyy-MM-dd") + "'); " +
-                        //creacion = new SqlCommand("Insert into Producto(Id_producto, Codigo, Referencia, Descripcion, Talla, PrecioVenta, GrupoPrimavera, CasaFaska, Cantidad, CantidadPaquete, GrupoPaquete) values (0,'Desconocido','Desconocido','Desconocido','Desco',0,0,0,0,0,0); " +
-                        //    "Insert into Cliente(Id_cliente, Almacen, Direccion, Telefono, RUC, Razon_Social) values (0,'Desconocido','Desconocido','Desconocido','Desconocido','Desconocido'); ", conexion);
-                        //conexion.Open();
-                        //creacion.ExecuteNonQuery();
-                        //conexion.Close();
+                        
                     }
                     catch (Exception ex)
                     {
