@@ -30,11 +30,13 @@ namespace LuiguiBaretta
         {
             try
             {
-                SqlConnection objcon = new SqlConnection("Data Source = "+ this.comboBoxServidores.Text + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";");
+                ConsultasBaseDeDatos.ServerName = this.comboBoxServidores.Text;
+                ConsultasBaseDeDatos.CadenaConexion = "Data Source = " + ConsultasBaseDeDatos.ServerName + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";";
+
+                SqlConnection objcon = new SqlConnection(ConsultasBaseDeDatos.CadenaConexion);
                 objcon.Open();
                 objcon.Close();
-                ConsultasBaseDeDatos.ServerName = this.comboBoxServidores.Text;
-                ConsultasBaseDeDatos.CadenaConexion = "Data Source = " + this.comboBoxServidores.Text + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";";
+
                 this.Close();
             }
             catch (System.Exception ex)
