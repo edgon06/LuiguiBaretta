@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
 
 namespace LuiguiBaretta
 {
     class ConsultasBaseDeDatos
     {
-        //public static string CadenaConexion = "Data Source=" + System.Environment.MachineName + ";Initial Catalog=LuiguiBaretta;Integrated Security=True";
         public static string CadenaConexion;
         public static string ServerName;
 
@@ -26,7 +23,7 @@ namespace LuiguiBaretta
                 objcon.Close();
                 data.Fill(DataTabla, "Tabla");
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return default;
@@ -99,40 +96,27 @@ namespace LuiguiBaretta
             }
         }
 
-        public static bool Creacion_base_de_datos()
+        public static void Creacion_base_de_datos()
         {
-            SqlConnection conexion = new SqlConnection("Data Source=" + ServerName + ";Initial Catalog=LuiguiBaretta;Integrated Security=True");
-            try
+            if (MessageBox.Show("¿Desea crear la base de datos?", "La Base de datos LuiguiBaretta no existe", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                conexion.Open();
-                conexion.Close();
-            }
-            catch (Exception)
-            {
-                if (MessageBox.Show("¿Desea crear la base de datos?", "No hay base de datos existente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                try
                 {
-                    conexion = new SqlConnection("Data Source=" + ServerName + ";Initial Catalog=master;Integrated Security=True");
-                    try
-                    {
-                        SqlCommand creación = new SqlCommand("Create database LuiguiBaretta", conexion);
-                        conexion.Open();
-                        creación.ExecuteNonQuery();
-                        conexion.Close();
-                        
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Error al crear base de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        conexion.Close();
-                    }
-                    return true;
+                    ProcessStartInfo cmd = new ProcessStartInfo("sqlcmd", "-S " + ServerName + " -i \"" + Directory.GetCurrentDirectory() + "\\SQL_Creacion.sql\"");
+                    
+                    cmd.UseShellExecute = false;
+                    cmd.CreateNoWindow = true;
+                    cmd.RedirectStandardOutput = true;
+
+                    Process ejecutar = new Process();
+                    ejecutar.StartInfo = cmd;
+                    ejecutar.Start();
                 }
-                else
+                catch (Exception ex)
                 {
-                    return false;
+                    MessageBox.Show(ex.Message, "Error al crear base de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            return true;
         }
 
         public static DataTable loginarametre(string Sentencia)
@@ -147,7 +131,7 @@ namespace LuiguiBaretta
                 objcon.Close();
                 data.Fill(DataTabla, "Tabla");
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return default;
