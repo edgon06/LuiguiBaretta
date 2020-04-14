@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using LuiguiBaretta.Clases;
 
 namespace LuiguiBaretta
@@ -25,7 +17,6 @@ namespace LuiguiBaretta
             this.ButtonAnadirVenta.Click += new EventHandler(NumericUpDownCantidad_Llenar);
             this.ButtonDeshacer.Click += new EventHandler(NumericUpDownCantidad_Llenar);
             this.DataGridViewVentas.Columns[3].DefaultCellStyle.Format = "C2";
-            //ConsultasBaseDeDatos.Creacion_base_de_datos();
         }
 
         private void Ventana_Prinsipal_Load(object sender, EventArgs e)

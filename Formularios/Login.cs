@@ -15,10 +15,10 @@ namespace LuiguiBaretta
 
         private void login_Load(object sender, EventArgs e)
         {
-            SqlDataSourceEnumerator servidores = SqlDataSourceEnumerator.Instance;
+            //SqlDataSourceEnumerator servidores = SqlDataSourceEnumerator.Instance;
 
-            this.comboBoxServidores.DataSource = servidores.GetDataSources();
-            this.comboBoxServidores.DisplayMember = "ServerName";
+            //this.comboBoxServidores.DataSource = servidores.GetDataSources();
+            //this.comboBoxServidores.DisplayMember = "ServerName";
 
             this.comboboxUser.DataSource = ConsultasBaseDeDatos.loginarametre("select name from master.sys.syslogins where dbname = 'LuiguiBaretta'");
             this.comboboxUser.DisplayMember = "name";
