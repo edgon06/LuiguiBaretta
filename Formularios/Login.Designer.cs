@@ -102,6 +102,7 @@
             this.Controls.Add(this.comboboxUser);
             this.Controls.Add(this.Usuario);
             this.Name = "login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de seción";
             this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);

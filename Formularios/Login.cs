@@ -25,7 +25,7 @@ namespace LuiguiBaretta
         {
             try
             {
-                ConsultasBaseDeDatos.CadenaConexion = "Data Source = " + ConsultasBaseDeDatos.ServerName + "; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";";
+                ConsultasBaseDeDatos.CadenaConexion = "Data Source = ; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";";
                 SqlConnection objcon = new SqlConnection(ConsultasBaseDeDatos.CadenaConexion);
                 objcon.Open();
                 objcon.Close();

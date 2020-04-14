@@ -1468,6 +1468,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MinimumSize = new System.Drawing.Size(900, 580);
             this.Name = "Ventana_Prinsipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LuiguiBaretta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Prinsipal_FormClosing);
             this.Load += new System.EventHandler(this.Ventana_Prinsipal_Load);

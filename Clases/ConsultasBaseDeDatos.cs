@@ -10,7 +10,6 @@ namespace LuiguiBaretta
     class ConsultasBaseDeDatos
     {
         public static string CadenaConexion;
-        public static string ServerName;
 
         public static DataTable ObtenerTablaDeBDLuiguibaretta(string Sentencia)
         {
@@ -105,8 +104,8 @@ namespace LuiguiBaretta
                     ProcessStartInfo cmd = new ProcessStartInfo("sqlcmd", " -i \"" + Directory.GetCurrentDirectory() + "\\SQL_Creacion.sql\"");
                     
                     cmd.UseShellExecute = false;
-                    cmd.CreateNoWindow = true;
-                    cmd.RedirectStandardOutput = true;
+                    //cmd.CreateNoWindow = true;
+                    //cmd.RedirectStandardOutput = true;
 
                     Process ejecutar = new Process();
                     ejecutar.StartInfo = cmd;
