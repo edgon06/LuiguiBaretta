@@ -102,7 +102,7 @@ namespace LuiguiBaretta
             {
                 try
                 {
-                    ProcessStartInfo cmd = new ProcessStartInfo("sqlcmd", "-S " + ServerName + " -i \"" + Directory.GetCurrentDirectory() + "\\SQL_Creacion.sql\"");
+                    ProcessStartInfo cmd = new ProcessStartInfo("sqlcmd", " -i \"" + Directory.GetCurrentDirectory() + "\\SQL_Creacion.sql\"");
                     
                     cmd.UseShellExecute = false;
                     cmd.CreateNoWindow = true;
@@ -125,7 +125,7 @@ namespace LuiguiBaretta
             DataSet DataTabla = new DataSet("Tabla");
             try
             {
-                SqlConnection objcon = new SqlConnection("Data Source = " + ServerName + ";Initial Catalog=master;Integrated Security=True");
+                SqlConnection objcon = new SqlConnection("Data Source = ;Initial Catalog=master;Integrated Security=True");
                 objcon.Open();
                 SqlDataAdapter data = new SqlDataAdapter(Sentencia, objcon);
                 objcon.Close();
