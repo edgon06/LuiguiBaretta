@@ -25,10 +25,10 @@ namespace LuiguiBaretta
         {
             try
             {
-                ConsultasBaseDeDatos.CadenaConexion = "Data Source = ; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";";
-                SqlConnection objcon = new SqlConnection(ConsultasBaseDeDatos.CadenaConexion);
+                SqlConnection objcon = new SqlConnection("Data Source = ; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";");
                 objcon.Open();
                 objcon.Close();
+                ConsultasBaseDeDatos.CadenaConexion = "Data Source = ; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";";
                 this.Close();
             }
             catch (Exception ex)

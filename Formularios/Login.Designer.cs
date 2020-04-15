@@ -33,12 +33,11 @@
             this.texboxPassword = new System.Windows.Forms.TextBox();
             this.comboboxUser = new System.Windows.Forms.ComboBox();
             this.Usuario = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Aceptar
             // 
-            this.Aceptar.Location = new System.Drawing.Point(178, 119);
+            this.Aceptar.Location = new System.Drawing.Point(96, 94);
             this.Aceptar.Name = "Aceptar";
             this.Aceptar.Size = new System.Drawing.Size(109, 23);
             this.Aceptar.TabIndex = 9;
@@ -49,7 +48,7 @@
             // Contraseña
             // 
             this.Contraseña.AutoSize = true;
-            this.Contraseña.Location = new System.Drawing.Point(55, 84);
+            this.Contraseña.Location = new System.Drawing.Point(24, 58);
             this.Contraseña.Name = "Contraseña";
             this.Contraseña.Size = new System.Drawing.Size(64, 13);
             this.Contraseña.TabIndex = 8;
@@ -57,7 +56,7 @@
             // 
             // texboxPassword
             // 
-            this.texboxPassword.Location = new System.Drawing.Point(127, 81);
+            this.texboxPassword.Location = new System.Drawing.Point(96, 55);
             this.texboxPassword.Name = "texboxPassword";
             this.texboxPassword.PasswordChar = '*';
             this.texboxPassword.Size = new System.Drawing.Size(160, 20);
@@ -67,7 +66,7 @@
             // 
             this.comboboxUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboboxUser.FormattingEnabled = true;
-            this.comboboxUser.Location = new System.Drawing.Point(127, 54);
+            this.comboboxUser.Location = new System.Drawing.Point(96, 28);
             this.comboboxUser.Name = "comboboxUser";
             this.comboboxUser.Size = new System.Drawing.Size(160, 21);
             this.comboboxUser.TabIndex = 6;
@@ -75,32 +74,25 @@
             // Usuario
             // 
             this.Usuario.AutoSize = true;
-            this.Usuario.Location = new System.Drawing.Point(55, 57);
+            this.Usuario.Location = new System.Drawing.Point(24, 31);
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(46, 13);
             this.Usuario.TabIndex = 5;
             this.Usuario.Text = "Usuario:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(132, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Inicio de seción";
-            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 161);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(298, 141);
             this.Controls.Add(this.Aceptar);
             this.Controls.Add(this.Contraseña);
             this.Controls.Add(this.texboxPassword);
             this.Controls.Add(this.comboboxUser);
             this.Controls.Add(this.Usuario);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(314, 180);
+            this.MinimumSize = new System.Drawing.Size(314, 180);
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de seción";
@@ -117,6 +109,5 @@
         private System.Windows.Forms.TextBox texboxPassword;
         private System.Windows.Forms.ComboBox comboboxUser;
         private System.Windows.Forms.Label Usuario;
-        private System.Windows.Forms.Label label1;
     }
 }
