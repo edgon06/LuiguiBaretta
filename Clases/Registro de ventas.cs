@@ -42,17 +42,21 @@ namespace LuiguiBaretta.Clases
             set { TablaProductos = value; }
         }
 
-        public void EstablecerRango_fecha(string fecha1)
+        public void EstablecerRango_fecha(ref DataGridView vacio, string fecha1)
         {
-            Rango = ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * from Venta where fecha = '" + fecha1 + "'");
+            Rango = ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * from VistaVenta where fecha = '" + fecha1 + "'");
+            vacio.DataSource = Rango;
+            PintarDeudores(ref vacio);
         }
 
-        public void EstablecerRango_fecha(string fecha1, string fecha2)
+        public void EstablecerRango_fecha(ref DataGridView vacio, string fecha1, string fecha2)
         {
-            Rango = ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * from Venta where fecha between '" + fecha1 + "' and '" + fecha2 + "'");
+            Rango = ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * from VistaVenta where fecha between '" + fecha1 + "' and '" + fecha2 + "'");
+            vacio.DataSource = Rango;
+            PintarDeudores(ref vacio);
         }
 
-        public void EstablecerFiltro(String Cadena)
+        public void EstablecerFiltro(ref DataGridView vacio, String Cadena)
         {
             string salida_de_datos = "";
             string[] palabras_busqueda = Cadena.Split(' ');
@@ -76,6 +80,14 @@ namespace LuiguiBaretta.Clases
                 }
             }
             Filtro = ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * from VistaVenta where " + salida_de_datos);
+            vacio.DataSource = Filtro;
+            PintarDeudores(ref vacio);
+        }
+
+        public void EstablecerDeudores(ref DataGridView vacio)
+        {
+            vacio.DataSource = Deudores;
+            PintarDeudores(ref vacio);
         }
 
         public void EstableceProductos(ref DataGridView dataGridView , int id_Venta)
@@ -105,11 +117,15 @@ namespace LuiguiBaretta.Clases
             {
 
             }
-            
 
+            PintarDeudores(ref vacio);
+        }
+
+        private void PintarDeudores(ref DataGridView vacio)
+        {
             for (int x = 0; x < vacio.RowCount; x++)
             {
-                if(float.Parse(vacio.Rows[x].Cells[4].Value.ToString()) > float.Parse(vacio.Rows[x].Cells[5].Value.ToString()))
+                if (float.Parse(vacio.Rows[x].Cells[4].Value.ToString()) > float.Parse(vacio.Rows[x].Cells[5].Value.ToString()))
                 {
                     vacio.Rows[x].DefaultCellStyle.BackColor = System.Drawing.Color.Salmon;
                 }

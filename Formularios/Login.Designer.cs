@@ -102,8 +102,10 @@
             this.Controls.Add(this.User);
             this.Controls.Add(this.Usuario);
             this.Name = "login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de seción";
             this.Load += new System.EventHandler(this.login_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.login_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
