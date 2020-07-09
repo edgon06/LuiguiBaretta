@@ -307,8 +307,7 @@ namespace LuiguiBaretta
         {
             if (PanelRegistroDeVentas.Visible)
             {
-                Registro_De_Ventas.EstablecerFiltro(this.TextBoxBuscar.Text);
-                this.DatagridViewRegistroDeVentas.DataSource = Registro_De_Ventas.Filtro;
+                Registro_De_Ventas.EstablecerFiltro(ref DatagridViewRegistroDeVentas, this.TextBoxBuscar.Text);
             }
 
             if (PanelCliente.Visible)
@@ -326,7 +325,7 @@ namespace LuiguiBaretta
 
         private void ButtonDeudores_Click(object sender, EventArgs e)
         {
-            this.DatagridViewRegistroDeVentas.DataSource = Registro_De_Ventas.Deudores;
+            Registro_De_Ventas.EstablecerDeudores(ref DatagridViewRegistroDeVentas);
         }
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -345,19 +344,19 @@ namespace LuiguiBaretta
         {
             if (this.CheckBoxRango1.Checked && !this.CheckBoxRango2.Checked)
             {
-                this.Registro_De_Ventas.EstablecerRango_fecha(this.DateTimePickerRango1.Text);
+                this.Registro_De_Ventas.EstablecerRango_fecha(ref DatagridViewRegistroDeVentas, this.DateTimePickerRango1.Text);
                 this.DatagridViewRegistroDeVentas.DataSource = Registro_De_Ventas.Rango;
             }
             else if (this.CheckBoxRango1.Checked && this.CheckBoxRango2.Checked)
             {
-                Registro_De_Ventas.EstablecerRango_fecha(this.DateTimePickerRango1.Text, this.DateTimePickerRango2.Text);
+                Registro_De_Ventas.EstablecerRango_fecha(ref DatagridViewRegistroDeVentas, this.DateTimePickerRango1.Text, this.DateTimePickerRango2.Text);
                 this.DatagridViewRegistroDeVentas.DataSource = Registro_De_Ventas.Rango;
             }
         }
 
         private void ButtonTodos_Click(object sender, EventArgs e)
         {
-            this.DatagridViewRegistroDeVentas.DataSource = Registro_De_Ventas.Datos;
+            Registro_De_Ventas.EstablecerDatos(ref DatagridViewRegistroDeVentas);
         }
 
         private void DatagridViewRegistroDeVentas_CellClick(object sender, DataGridViewCellEventArgs e)

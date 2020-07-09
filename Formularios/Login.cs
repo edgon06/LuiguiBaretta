@@ -39,5 +39,10 @@ namespace LuiguiBaretta
                 MessageBox.Show(ex.Message, "Usuario o contraseña incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }
