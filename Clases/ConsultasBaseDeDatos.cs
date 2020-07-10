@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
 
 namespace LuiguiBaretta
 {
     class ConsultasBaseDeDatos
     {
-        //static string CadenaConexion = "Data = LAPTOP-JEEI4HN0;Initial Catalog=LuiguiBaretta;Integrated Security=True";
         public static string CadenaConexion;
 
         public static DataTable ObtenerTablaDeBDLuiguibaretta(string Sentencia)
@@ -25,7 +22,7 @@ namespace LuiguiBaretta
                 objcon.Close();
                 data.Fill(DataTabla, "Tabla");
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return default;
@@ -50,9 +47,9 @@ namespace LuiguiBaretta
                 }
                 objcon.Close();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message, Sentencia, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Sentencia, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return Valor;
         }
@@ -76,7 +73,7 @@ namespace LuiguiBaretta
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message, Sentencia, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Sentencia, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return Valor;
         }
@@ -98,89 +95,28 @@ namespace LuiguiBaretta
             }
         }
 
-        public static bool Creacion_base_de_datos()
+        public static void Creacion_base_de_datos()
         {
-            SqlConnection conexion = new SqlConnection("Data Source=" + System.Environment.MachineName + ";Initial Catalog=LuiguiBaretta;Integrated Security=True");
-            try
+            if (MessageBox.Show("¿Desea crear la base de datos?", "La Base de datos LuiguiBaretta no existe", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                conexion.Open();
-                conexion.Close();
-            }
-            catch (Exception)
-            {
-                if (MessageBox.Show("¿Desea crear la base de datos?", "No hay base de datos existente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                try
                 {
-                    conexion = new SqlConnection("Data Source=" + System.Environment.MachineName + ";Initial Catalog=master;Integrated Security=True");
-                    try
-                    {
-                        SqlCommand creación = new SqlCommand("Create database LuiguiBaretta", conexion);
-                        conexion.Open();
-                        creación.ExecuteNonQuery();
-                        conexion.Close();
-                        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        //conexion = new SqlConnection("Data Source=" + System.Environment.MachineName + ";Initial Catalog=LuiguiBaretta;Integrated Security=True");
-                        //SqlCommand creacion = new SqlCommand("Create Table Producto( " +
-                        //        "Id_Producto int Primary key not null, " +
-                        //        "Codigo varchar(20), " +
-                        //        "Referencia varchar(10), " +
-                        //        "Descripcion varchar(50), " +
-                        //        "Talla varchar(5), " +
-                        //        "PrecioVenta Decimal Default 0, " +
-                        //        "GrupoPrimavera Decimal Default 0, " +
-                        //        "CasaFaska Decimal Default 0, " +
-                        //        "Cantidad Decimal Default 0, " +
-                        //        "CantidadPaquete Decimal Default 0, " +
-                        //        "GrupoPaquete int Default 0) " +
-                        //    "Create Table ProveerProducto( " +
-                        //        "ID_Recarga int Primary key not null, " +
-                        //        "ID_Producto int, " +
-                        //        "Cantidad Decimal Default 0, " +
-                        //        "Fecha Date " +
-                        //        "Foreign key(ID_Producto) references Producto(ID_Producto)) " +
-                        //    "Create table Cliente( " +
-                        //        "ID_Cliente int Primary key not null, " +
-                        //        "Almacen Varchar(50), " +
-                        //        "Direccion Varchar(50), " +
-                        //        "Telefono Varchar(50), " +
-                        //        "RUC text, " +
-                        //        "Razon_Social text) " +
-                        //    "Create Table Venta( " +
-                        //        "ID_Venta int IDENTITY(0, 1) Primary key not null, " +
-                        //        "Cliente int, " +
-                        //        "Fecha date, " +
-                        //        "Total Decimal Default 0, " +
-                        //        "Pago Decimal Default 0 " +
-                        //        "Foreign key(Cliente) references Cliente(ID_Cliente)) " +
-                        //    "Create Table VentaProducto( " +
-                        //        "ID_Venta int, " +
-                        //        "ID_Producto int, " +
-                        //        "Cantidad int Default 0 " +
-                        //        "Foreign key(ID_Producto) references Producto(ID_Producto), " +
-                        //        "Foreign key(ID_Venta) references Venta(ID_Venta)) ", conexion);
-                        //conexion.Open();
-                        //creacion.ExecuteNonQuery();
-                        //conexion.Close();
-                        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        //"Insert into ProveerProducto(ID_Recarga, Id_Producto, Cantidad, Fecha) values (0,0,0,'" + DateTime.Now.ToString("yyyy-MM-dd") + "'); " +
-                        //creacion = new SqlCommand("Insert into Producto(Id_producto, Codigo, Referencia, Descripcion, Talla, PrecioVenta, GrupoPrimavera, CasaFaska, Cantidad, CantidadPaquete, GrupoPaquete) values (0,'Desconocido','Desconocido','Desconocido','Desco',0,0,0,0,0,0); " +
-                        //    "Insert into Cliente(Id_cliente, Almacen, Direccion, Telefono, RUC, Razon_Social) values (0,'Desconocido','Desconocido','Desconocido','Desconocido','Desconocido'); ", conexion);
-                        //conexion.Open();
-                        //creacion.ExecuteNonQuery();
-                        //conexion.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Error al crear base de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        conexion.Close();
-                    }
-                    return true;
+                    ProcessStartInfo cmd = new ProcessStartInfo("sqlcmd", " -i \"" + Directory.GetCurrentDirectory() + "\\SQL_Creacion.sql\"");
+
+                    cmd.UseShellExecute = false;
+                    cmd.CreateNoWindow = true;
+                    cmd.RedirectStandardOutput = true;
+
+                    Process ejecutar = new Process();
+                    ejecutar.StartInfo = cmd;
+                    ejecutar.Start();
+                    ejecutar.StandardOutput.ReadToEnd();
                 }
-                else
+                catch (Exception ex)
                 {
-                    return false;
+                    MessageBox.Show(ex.Message, "Error al crear base de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            return true;
         }
 
         public static DataTable loginarametre(string Sentencia)
@@ -189,13 +125,13 @@ namespace LuiguiBaretta
             DataSet DataTabla = new DataSet("Tabla");
             try
             {
-                SqlConnection objcon = new SqlConnection("Data Source = " + System.Environment.MachineName + ";Initial Catalog=master;Integrated Security=True");
+                SqlConnection objcon = new SqlConnection("Data Source = ;Initial Catalog=master;Integrated Security=True");
                 objcon.Open();
                 SqlDataAdapter data = new SqlDataAdapter(Sentencia, objcon);
                 objcon.Close();
                 data.Fill(DataTabla, "Tabla");
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return default;
