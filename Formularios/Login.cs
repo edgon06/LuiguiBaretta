@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace LuiguiBaretta
 {
@@ -20,29 +14,27 @@ namespace LuiguiBaretta
 
         private void login_Load(object sender, EventArgs e)
         {
-            this.User.DataSource = ConsultasBaseDeDatos.loginarametre("select * from master.sys.sql_logins where default_database_name='LuiguiBaretta'");
-            this.User.DisplayMember = "name";
+            DataTable tabla = ConsultasBaseDeDatos.loginarametre("SELECT * FROM sysdatabases WHERE NAME = 'LuiguiBaretta'");
+            if (tabla.Rows.Count == 0)
+                ConsultasBaseDeDatos.Creacion_base_de_datos();
+            this.comboboxUser.DataSource = ConsultasBaseDeDatos.loginarametre("select name from master.sys.syslogins where dbname = 'LuiguiBaretta'");
+            this.comboboxUser.DisplayMember = "name";
         }
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
             try
             {
-                SqlConnection objcon = new SqlConnection("Data Source = "+ System.Environment.MachineName + "; User ID=" + this.User.Text + ";Password=" + this.Password.Text + ";");
+                SqlConnection objcon = new SqlConnection("Data Source = ; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";");
                 objcon.Open();
                 objcon.Close();
-                ConsultasBaseDeDatos.CadenaConexion = "Data Source = " + System.Environment.MachineName + "; User ID=" + this.User.Text + ";Password=" + this.Password.Text + ";";
+                ConsultasBaseDeDatos.CadenaConexion = "Data Source = ; User ID=" + this.comboboxUser.Text + ";Password=" + this.texboxPassword.Text + ";";
                 this.Close();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Usuario o contraseña incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void login_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
         }
     }
 }
