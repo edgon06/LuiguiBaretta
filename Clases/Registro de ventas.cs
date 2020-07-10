@@ -10,6 +10,7 @@ namespace LuiguiBaretta.Clases
 {
     public class Registro_de_ventas
     {
+
         private DataTable TablaFiltro;
         private DataTable TablaRango;
         private DataTable TablaProductos;
