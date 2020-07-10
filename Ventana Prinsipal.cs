@@ -415,7 +415,7 @@ namespace LuiguiBaretta
                 TextBoxNuevoPago.Text + "', '" +
                 DatagridViewRegistroDeVentas.CurrentRow.Cells[0].Value.ToString() + "', '" +
                 LabelNumDeuda.Text + "'");
-            DatagridViewRegistroDeVentas.DataSource = Registro_De_Ventas.Datos;
+            Registro_De_Ventas.EstablecerDatos(ref DatagridViewRegistroDeVentas);
             MessageBox.Show("Pago Realizado con éxito", "Pago Realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
