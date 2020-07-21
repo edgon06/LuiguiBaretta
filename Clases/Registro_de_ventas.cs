@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 
@@ -10,11 +6,6 @@ namespace LuiguiBaretta.Clases
 {
     public class Registro_de_ventas
     {
-
-        private DataTable TablaFiltro;
-        private DataTable TablaRango;
-        private DataTable TablaProductos;
-
         public DataTable Datos
         {
             get { return ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * from VistaVenta"); }
@@ -25,23 +16,11 @@ namespace LuiguiBaretta.Clases
             get { return ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * from VistaVenta where Pago < Total"); }
         }
 
-        public DataTable Filtro
-        {
-            get { return TablaFiltro; }
-            set { TablaFiltro = value; } 
-        }
+        public DataTable Filtro { get; set; }
 
-        public DataTable Rango
-        {
-            get { return TablaRango; }
-            set { TablaRango = value; }
-        }
+        public DataTable Rango { get; set; }
 
-        public DataTable Productos
-        {
-            get { return TablaProductos; }
-            set { TablaProductos = value; }
-        }
+        public DataTable Productos { get; set; }
 
         public void EstablecerRango_fecha(ref DataGridView vacio, string fecha1)
         {
@@ -122,7 +101,7 @@ namespace LuiguiBaretta.Clases
             PintarDeudores(ref vacio);
         }
 
-        private void PintarDeudores(ref DataGridView vacio)
+        public void PintarDeudores(ref DataGridView vacio)
         {
             for (int x = 0; x < vacio.RowCount; x++)
             {

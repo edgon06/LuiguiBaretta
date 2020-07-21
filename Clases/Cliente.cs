@@ -1,30 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
+using System.Windows.Forms;
 
 namespace LuiguiBaretta
 {
     class Cliente
     {
-        private DataTable TablaDatos;
-        private DataTable TablaFiltro;
-
         public DataTable Datos
         {
             get { return ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * From Cliente"); }
-            set { TablaDatos = value; }
         }
 
-        public DataTable Filtro
-        {
-            get { return TablaFiltro; }
-            set { TablaFiltro = value; }
-        }
+        public DataTable Filtro { get; set; }
 
-        public void EstablecerFiltro(String Cadena)
+        public void EstablecerFiltro(ref DataGridView vacio, string Cadena)
         {
             string salida_de_datos = "";
             string[] palabras_busqueda = Cadena.Split(' ');
@@ -48,6 +36,7 @@ namespace LuiguiBaretta
                 }
             }
             Filtro = ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * from Cliente where " + salida_de_datos);
+            vacio.DataSource = Filtro;
         }
     }
 }

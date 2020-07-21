@@ -87,8 +87,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Herramientas\PanelPrinsipal.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Clases\ConsultasBaseDeDatos.cs" />
     <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Formularios\Módulos\FormInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Módulos\FormInventario.Designer.cs">
+      <DependentUpon>FormInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Módulos\FormClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Módulos\FormClientes.Designer.cs">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Módulos\FormVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Módulos\FormVentas.Designer.cs">
+      <DependentUpon>FormVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Módulos\FormRegistro de venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Módulos\FormRegistro de venta.Designer.cs">
+      <DependentUpon>FormRegistro de venta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,16 +140,30 @@
       <DependentUpon>LuiguiBarettaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\Producto.cs" />
-    <Compile Include="Clases\Registro de ventas.cs" />
+    <Compile Include="Clases\Registro_de_ventas.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Ventana Prinsipal.cs">
+    <Compile Include="..\..\..\Desktop\Copia\Ventana Prinsipal.cs">
       <SubType>Form</SubType>
+      <Link>Ventana Prinsipal.cs</Link>
     </Compile>
-    <Compile Include="Ventana Prinsipal.Designer.cs">
+    <Compile Include="..\..\..\Desktop\Copia\Ventana Prinsipal.Designer.cs">
       <DependentUpon>Ventana Prinsipal.cs</DependentUpon>
+      <Link>Ventana Prinsipal.Designer.cs</Link>
     </Compile>
     <Compile Include="Clases\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Módulos\FormClientes.resx">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Módulos\FormInventario.resx">
+      <DependentUpon>FormInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Módulos\FormVentas.resx">
+      <DependentUpon>FormVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Módulos\FormRegistro de venta.resx">
+      <DependentUpon>FormRegistro de venta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,8 +173,9 @@
     <EmbeddedResource Include="Formularios\Nuevo o editar Cliente.resx">
       <DependentUpon>Nuevo o editar Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventana Prinsipal.resx">
+    <EmbeddedResource Include="..\..\..\Desktop\Copia\Ventana Prinsipal.resx">
       <DependentUpon>Ventana Prinsipal.cs</DependentUpon>
+      <Link>Ventana Prinsipal.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -171,7 +213,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Base de datos\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>

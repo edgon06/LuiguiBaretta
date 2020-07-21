@@ -32,8 +32,8 @@ namespace LuiguiBaretta
 
         public static float ObtenerValorFloatDeBDLuiguiBaretta(string Sentencia)
         {
-            SqlCommand Comando = null;
-            SqlDataReader Lectura = null;
+            SqlCommand Comando;
+            SqlDataReader Lectura;
             float Valor = 0;
             try
             {
@@ -56,8 +56,8 @@ namespace LuiguiBaretta
 
         public static int ObtenerValorEnteroDeBDLuiguiBaretta(string Sentencia)
         {
-            SqlCommand Comando = null;
-            SqlDataReader Lectura = null;
+            SqlCommand Comando;
+            SqlDataReader Lectura;
             int Valor = 0;
             try
             {
@@ -97,24 +97,33 @@ namespace LuiguiBaretta
 
         public static void Creacion_base_de_datos()
         {
-            if (MessageBox.Show("¿Desea crear la base de datos?", "La Base de datos LuiguiBaretta no existe", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            try
             {
-                try
+                SqlConnection conexion = new SqlConnection("Data Source = ;Initial Catalog=master; Integrated Security=True");
+                conexion.Open();
+                conexion.Close();
+            }
+            catch
+            {
+                if (MessageBox.Show("¿Desea crear la base de datos?", "La Base de datos LuiguiBaretta no existe", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    ProcessStartInfo cmd = new ProcessStartInfo("sqlcmd", " -i \"" + Directory.GetCurrentDirectory() + "\\SQL_Creacion.sql\"");
+                    try
+                    {
+                        ProcessStartInfo cmd = new ProcessStartInfo("sqlcmd", " -i \"" + Directory.GetCurrentDirectory() + "\\SQL_Creacion.sql\"");
 
-                    cmd.UseShellExecute = false;
-                    cmd.CreateNoWindow = true;
-                    cmd.RedirectStandardOutput = true;
+                        cmd.UseShellExecute = false;
+                        cmd.CreateNoWindow = true;
+                        cmd.RedirectStandardOutput = true;
 
-                    Process ejecutar = new Process();
-                    ejecutar.StartInfo = cmd;
-                    ejecutar.Start();
-                    ejecutar.StandardOutput.ReadToEnd();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error al crear base de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Process ejecutar = new Process();
+                        ejecutar.StartInfo = cmd;
+                        ejecutar.Start();
+                        ejecutar.StandardOutput.ReadToEnd();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error al crear base de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

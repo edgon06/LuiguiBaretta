@@ -1,6 +1,6 @@
 ﻿namespace LuiguiBaretta
 {
-    partial class login
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Aceptar = new System.Windows.Forms.Button();
+            this.ButtonIniciarSesion = new System.Windows.Forms.Button();
             this.Contraseña = new System.Windows.Forms.Label();
             this.texboxPassword = new System.Windows.Forms.TextBox();
             this.comboboxUser = new System.Windows.Forms.ComboBox();
             this.Usuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Aceptar
+            // ButtonIniciarSesion
             // 
-            this.Aceptar.Location = new System.Drawing.Point(96, 94);
-            this.Aceptar.Name = "Aceptar";
-            this.Aceptar.Size = new System.Drawing.Size(109, 23);
-            this.Aceptar.TabIndex = 9;
-            this.Aceptar.Text = "Iniciar Sesión";
-            this.Aceptar.UseVisualStyleBackColor = true;
-            this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
+            this.ButtonIniciarSesion.Location = new System.Drawing.Point(96, 94);
+            this.ButtonIniciarSesion.Name = "ButtonIniciarSesion";
+            this.ButtonIniciarSesion.Size = new System.Drawing.Size(109, 23);
+            this.ButtonIniciarSesion.TabIndex = 9;
+            this.ButtonIniciarSesion.Text = "Iniciar Sesión";
+            this.ButtonIniciarSesion.UseVisualStyleBackColor = true;
+            this.ButtonIniciarSesion.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // Contraseña
             // 
@@ -80,12 +80,13 @@
             this.Usuario.TabIndex = 5;
             this.Usuario.Text = "Usuario:";
             // 
-            // login
+            // Login
             // 
+            this.AcceptButton = this.ButtonIniciarSesion;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 141);
-            this.Controls.Add(this.Aceptar);
+            this.Controls.Add(this.ButtonIniciarSesion);
             this.Controls.Add(this.Contraseña);
             this.Controls.Add(this.texboxPassword);
             this.Controls.Add(this.comboboxUser);
@@ -93,7 +94,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(314, 180);
             this.MinimumSize = new System.Drawing.Size(314, 180);
-            this.Name = "login";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de seción";
             this.Load += new System.EventHandler(this.login_Load);
@@ -104,7 +105,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Aceptar;
+        private System.Windows.Forms.Button ButtonIniciarSesion;
         private System.Windows.Forms.Label Contraseña;
         private System.Windows.Forms.TextBox texboxPassword;
         private System.Windows.Forms.ComboBox comboboxUser;

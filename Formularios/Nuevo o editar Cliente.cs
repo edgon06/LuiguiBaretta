@@ -13,7 +13,7 @@ namespace LuiguiBaretta
 {
     public partial class Editar_Cliente : Form
     {
-        private int id_cliente = 0;
+        private readonly int id_cliente;
 
         public Editar_Cliente(String metodo)
         {
