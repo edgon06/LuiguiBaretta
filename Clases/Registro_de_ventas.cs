@@ -46,6 +46,7 @@ namespace LuiguiBaretta.Clases
                 {
                     salida_de_datos = "(Cast(ID_Venta As varchar(30)) Like '%" + palabra + "%' OR " +
                         "Almacen Like '%" + palabra + "%' OR " +
+                        "Direccion Like '%" + palabra + "%' OR " +
                         "Fecha Like '%" + palabra + "%' OR " +
                         "Cast(Total As varchar(30)) Like '%" + palabra + "%' OR " +
                         "Cast(Pago As varchar(30)) Like '%" + palabra + "%')";
@@ -54,6 +55,7 @@ namespace LuiguiBaretta.Clases
                 {
                     salida_de_datos += " And (Cast(ID_Venta As varchar(30)) Like '%" + palabra + "%' OR " +
                         "Almacen Like '%" + palabra + "%' OR " +
+                        "Direccion Like '%" + palabra + "%' OR " +
                         "Fecha Like '%" + palabra + "%' OR " +
                         "Cast(Total As varchar(30)) Like '%" + palabra + "%' OR " +
                         "Cast(Pago As varchar(30)) Like '%" + palabra + "%')";
@@ -75,7 +77,7 @@ namespace LuiguiBaretta.Clases
             Productos = ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("SELECT dbo.Producto.Descripcion, dbo.VentaProducto.Cantidad FROM dbo.Producto " +
                 "INNER JOIN dbo.VentaProducto ON dbo.Producto.Id_Producto = dbo.VentaProducto.ID_Producto and ID_Venta = " + id_Venta);
             dataGridView.DataSource = Productos;
-            dataGridView.Columns[0].Width = 120;
+            dataGridView.Columns[0].Width = 147;
             dataGridView.Columns[1].Width = 45;
         }
 
@@ -87,8 +89,8 @@ namespace LuiguiBaretta.Clases
                 vacio.Columns[0].Visible = false;
                 vacio.Columns[4].DefaultCellStyle.Format = "C2";
                 vacio.Columns[5].DefaultCellStyle.Format = "C2";
-                vacio.Columns[1].Width = 100;
-                vacio.Columns[2].Width = 100;
+                vacio.Columns[1].Width = 110;
+                vacio.Columns[2].Width = 115;
                 vacio.Columns[3].Width = 70;
                 vacio.Columns[4].Width = 80;
                 vacio.Columns[5].Width = 80;

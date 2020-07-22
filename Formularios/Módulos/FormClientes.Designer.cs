@@ -32,10 +32,11 @@
             this.ButtonEditarCliente = new System.Windows.Forms.Button();
             this.ButtonNuevoCliente = new System.Windows.Forms.Button();
             this.PanelCliente = new System.Windows.Forms.Panel();
+            this.panelRegistroDeVenta = new System.Windows.Forms.Panel();
             this.DataGridViewClientes = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.PanelBotonesCliente.SuspendLayout();
             this.PanelCliente.SuspendLayout();
+            this.panelRegistroDeVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,12 +77,20 @@
             // 
             this.PanelCliente.BackColor = System.Drawing.SystemColors.Menu;
             this.PanelCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelCliente.Controls.Add(this.DataGridViewClientes);
-            this.PanelCliente.Controls.Add(this.panel3);
+            this.PanelCliente.Controls.Add(this.panelRegistroDeVenta);
             this.PanelCliente.Location = new System.Drawing.Point(0, 57);
             this.PanelCliente.Name = "PanelCliente";
             this.PanelCliente.Size = new System.Drawing.Size(750, 443);
             this.PanelCliente.TabIndex = 30;
+            // 
+            // panelRegistroDeVenta
+            // 
+            this.panelRegistroDeVenta.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panelRegistroDeVenta.Controls.Add(this.DataGridViewClientes);
+            this.panelRegistroDeVenta.Location = new System.Drawing.Point(5, 5);
+            this.panelRegistroDeVenta.Name = "panelRegistroDeVenta";
+            this.panelRegistroDeVenta.Size = new System.Drawing.Size(740, 433);
+            this.panelRegistroDeVenta.TabIndex = 2;
             // 
             // DataGridViewClientes
             // 
@@ -92,21 +101,13 @@
             this.DataGridViewClientes.BackgroundColor = System.Drawing.SystemColors.GrayText;
             this.DataGridViewClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewClientes.Location = new System.Drawing.Point(57, 40);
+            this.DataGridViewClientes.Location = new System.Drawing.Point(5, 5);
             this.DataGridViewClientes.Name = "DataGridViewClientes";
             this.DataGridViewClientes.ReadOnly = true;
             this.DataGridViewClientes.RowHeadersVisible = false;
-            this.DataGridViewClientes.Size = new System.Drawing.Size(621, 368);
+            this.DataGridViewClientes.Size = new System.Drawing.Size(730, 423);
             this.DataGridViewClientes.TabIndex = 1;
             this.DataGridViewClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewClientes_CellClick);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.GrayText;
-            this.panel3.Location = new System.Drawing.Point(33, 23);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(667, 401);
-            this.panel3.TabIndex = 2;
             // 
             // FormClientes
             // 
@@ -121,6 +122,7 @@
             this.Text = "Form1";
             this.PanelBotonesCliente.ResumeLayout(false);
             this.PanelCliente.ResumeLayout(false);
+            this.panelRegistroDeVenta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewClientes)).EndInit();
             this.ResumeLayout(false);
 
@@ -133,6 +135,6 @@
         public System.Windows.Forms.Button ButtonNuevoCliente;
         private System.Windows.Forms.Panel PanelCliente;
         public System.Windows.Forms.DataGridView DataGridViewClientes;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelRegistroDeVenta;
     }
 }

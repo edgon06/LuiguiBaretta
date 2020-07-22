@@ -57,9 +57,9 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GrayText;
             this.panel4.Controls.Add(this.DataGridViewInventario);
-            this.panel4.Location = new System.Drawing.Point(23, 15);
+            this.panel4.Location = new System.Drawing.Point(5, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(705, 410);
+            this.panel4.Size = new System.Drawing.Size(740, 433);
             this.panel4.TabIndex = 2;
             // 
             // DataGridViewInventario
@@ -71,11 +71,11 @@
             this.DataGridViewInventario.BackgroundColor = System.Drawing.SystemColors.GrayText;
             this.DataGridViewInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridViewInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewInventario.Location = new System.Drawing.Point(22, 15);
+            this.DataGridViewInventario.Location = new System.Drawing.Point(5, 5);
             this.DataGridViewInventario.Name = "DataGridViewInventario";
             this.DataGridViewInventario.ReadOnly = true;
             this.DataGridViewInventario.RowHeadersVisible = false;
-            this.DataGridViewInventario.Size = new System.Drawing.Size(663, 377);
+            this.DataGridViewInventario.Size = new System.Drawing.Size(730, 423);
             this.DataGridViewInventario.TabIndex = 1;
             this.DataGridViewInventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewInventario_CellClick);
             // 

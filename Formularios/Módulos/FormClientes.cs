@@ -10,7 +10,7 @@ namespace LuiguiBaretta.Formularios.Módulos
         public FormClientes(ref ToolStripTextBox Filtro)
         {
             InitializeComponent();
-            this.DataGridViewClientes.DataSource = Cliente.Datos;
+            Cliente.EstablecerDatos(ref DataGridViewClientes);
             Filtro.KeyPress += new KeyPressEventHandler(this.Filtrar);
         }
 

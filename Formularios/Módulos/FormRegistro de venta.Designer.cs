@@ -44,10 +44,10 @@
             this.LabelNuevoPago = new System.Windows.Forms.Label();
             this.LabelTituloProductosDeVenta = new System.Windows.Forms.Label();
             this.LabelTituloRegistroDeVentas = new System.Windows.Forms.Label();
-            this.DataGridViewRegVentaProd = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.DataGridViewRegVentaProd = new System.Windows.Forms.DataGridView();
+            this.panelDataGridViewRegistroDeVenta = new System.Windows.Forms.Panel();
             this.DatagridViewRegistroDeVentas = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.PanelBotonesRegisroDeVentas = new System.Windows.Forms.Panel();
             this.ButtonTodos = new System.Windows.Forms.Button();
             this.ButtonDeudores = new System.Windows.Forms.Button();
@@ -58,7 +58,9 @@
             this.DateTimePickerRango1 = new System.Windows.Forms.DateTimePicker();
             this.PanelRegistroDeVentas.SuspendLayout();
             this.PanelNuevoPago.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewRegVentaProd)).BeginInit();
+            this.panelDataGridViewRegistroDeVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridViewRegistroDeVentas)).BeginInit();
             this.PanelBotonesRegisroDeVentas.SuspendLayout();
             this.SuspendLayout();
@@ -70,10 +72,8 @@
             this.PanelRegistroDeVentas.Controls.Add(this.PanelNuevoPago);
             this.PanelRegistroDeVentas.Controls.Add(this.LabelTituloProductosDeVenta);
             this.PanelRegistroDeVentas.Controls.Add(this.LabelTituloRegistroDeVentas);
-            this.PanelRegistroDeVentas.Controls.Add(this.DataGridViewRegVentaProd);
             this.PanelRegistroDeVentas.Controls.Add(this.panel2);
-            this.PanelRegistroDeVentas.Controls.Add(this.DatagridViewRegistroDeVentas);
-            this.PanelRegistroDeVentas.Controls.Add(this.panel1);
+            this.PanelRegistroDeVentas.Controls.Add(this.panelDataGridViewRegistroDeVenta);
             this.PanelRegistroDeVentas.Location = new System.Drawing.Point(0, 57);
             this.PanelRegistroDeVentas.Name = "PanelRegistroDeVentas";
             this.PanelRegistroDeVentas.Size = new System.Drawing.Size(750, 443);
@@ -188,6 +188,15 @@
             this.LabelTituloRegistroDeVentas.TabIndex = 4;
             this.LabelTituloRegistroDeVentas.Text = "Registro de ventas";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panel2.Controls.Add(this.DataGridViewRegVentaProd);
+            this.panel2.Location = new System.Drawing.Point(514, 33);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(220, 226);
+            this.panel2.TabIndex = 3;
+            // 
             // DataGridViewRegVentaProd
             // 
             this.DataGridViewRegVentaProd.AllowUserToAddRows = false;
@@ -213,20 +222,21 @@
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridViewRegVentaProd.DefaultCellStyle = dataGridViewCellStyle14;
-            this.DataGridViewRegVentaProd.Location = new System.Drawing.Point(540, 54);
+            this.DataGridViewRegVentaProd.Location = new System.Drawing.Point(5, 5);
             this.DataGridViewRegVentaProd.Name = "DataGridViewRegVentaProd";
             this.DataGridViewRegVentaProd.ReadOnly = true;
             this.DataGridViewRegVentaProd.RowHeadersVisible = false;
-            this.DataGridViewRegVentaProd.Size = new System.Drawing.Size(168, 181);
+            this.DataGridViewRegVentaProd.Size = new System.Drawing.Size(210, 216);
             this.DataGridViewRegVentaProd.TabIndex = 2;
             // 
-            // panel2
+            // panelDataGridViewRegistroDeVenta
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GrayText;
-            this.panel2.Location = new System.Drawing.Point(514, 33);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 226);
-            this.panel2.TabIndex = 3;
+            this.panelDataGridViewRegistroDeVenta.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panelDataGridViewRegistroDeVenta.Controls.Add(this.DatagridViewRegistroDeVentas);
+            this.panelDataGridViewRegistroDeVenta.Location = new System.Drawing.Point(19, 33);
+            this.panelDataGridViewRegistroDeVenta.Name = "panelDataGridViewRegistroDeVenta";
+            this.panelDataGridViewRegistroDeVenta.Size = new System.Drawing.Size(483, 389);
+            this.panelDataGridViewRegistroDeVenta.TabIndex = 1;
             // 
             // DatagridViewRegistroDeVentas
             // 
@@ -253,23 +263,15 @@
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DatagridViewRegistroDeVentas.DefaultCellStyle = dataGridViewCellStyle16;
-            this.DatagridViewRegistroDeVentas.Location = new System.Drawing.Point(45, 54);
+            this.DatagridViewRegistroDeVentas.Location = new System.Drawing.Point(5, 5);
             this.DatagridViewRegistroDeVentas.Name = "DatagridViewRegistroDeVentas";
             this.DatagridViewRegistroDeVentas.ReadOnly = true;
             this.DatagridViewRegistroDeVentas.RowHeadersVisible = false;
-            this.DatagridViewRegistroDeVentas.Size = new System.Drawing.Size(431, 344);
+            this.DatagridViewRegistroDeVentas.Size = new System.Drawing.Size(473, 379);
             this.DatagridViewRegistroDeVentas.TabIndex = 0;
             this.DatagridViewRegistroDeVentas.DataSourceChanged += new System.EventHandler(this.DatagridViewRegistroDeVentas_DataSourceChanged);
             this.DatagridViewRegistroDeVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagridViewRegistroDeVentas_CellClick);
             this.DatagridViewRegistroDeVentas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagridViewRegistroDeVentas_CellDoubleClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GrayText;
-            this.panel1.Location = new System.Drawing.Point(19, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(483, 389);
-            this.panel1.TabIndex = 1;
             // 
             // PanelBotonesRegisroDeVentas
             // 
@@ -289,9 +291,9 @@
             // 
             // ButtonTodos
             // 
-            this.ButtonTodos.Location = new System.Drawing.Point(104, 14);
+            this.ButtonTodos.Location = new System.Drawing.Point(107, 3);
             this.ButtonTodos.Name = "ButtonTodos";
-            this.ButtonTodos.Size = new System.Drawing.Size(75, 23);
+            this.ButtonTodos.Size = new System.Drawing.Size(98, 43);
             this.ButtonTodos.TabIndex = 12;
             this.ButtonTodos.Text = "Todos";
             this.ButtonTodos.UseVisualStyleBackColor = true;
@@ -299,9 +301,9 @@
             // 
             // ButtonDeudores
             // 
-            this.ButtonDeudores.Location = new System.Drawing.Point(23, 14);
+            this.ButtonDeudores.Location = new System.Drawing.Point(3, 3);
             this.ButtonDeudores.Name = "ButtonDeudores";
-            this.ButtonDeudores.Size = new System.Drawing.Size(75, 23);
+            this.ButtonDeudores.Size = new System.Drawing.Size(98, 43);
             this.ButtonDeudores.TabIndex = 11;
             this.ButtonDeudores.Text = "Deudores";
             this.ButtonDeudores.UseVisualStyleBackColor = true;
@@ -309,11 +311,11 @@
             // 
             // ButtonBuscarRango
             // 
-            this.ButtonBuscarRango.Location = new System.Drawing.Point(477, 14);
+            this.ButtonBuscarRango.Location = new System.Drawing.Point(477, 3);
             this.ButtonBuscarRango.Name = "ButtonBuscarRango";
-            this.ButtonBuscarRango.Size = new System.Drawing.Size(75, 23);
+            this.ButtonBuscarRango.Size = new System.Drawing.Size(98, 43);
             this.ButtonBuscarRango.TabIndex = 10;
-            this.ButtonBuscarRango.Text = "Buscar";
+            this.ButtonBuscarRango.Text = "Filtrar por fecha";
             this.ButtonBuscarRango.UseVisualStyleBackColor = true;
             this.ButtonBuscarRango.Click += new System.EventHandler(this.ButtonBuscarRango_Click);
             // 
@@ -321,7 +323,7 @@
             // 
             this.CheckBoxRango2.AutoSize = true;
             this.CheckBoxRango2.Enabled = false;
-            this.CheckBoxRango2.Location = new System.Drawing.Point(353, 19);
+            this.CheckBoxRango2.Location = new System.Drawing.Point(353, 29);
             this.CheckBoxRango2.Name = "CheckBoxRango2";
             this.CheckBoxRango2.Size = new System.Drawing.Size(15, 14);
             this.CheckBoxRango2.TabIndex = 9;
@@ -331,7 +333,7 @@
             // CheckBoxRango1
             // 
             this.CheckBoxRango1.AutoSize = true;
-            this.CheckBoxRango1.Location = new System.Drawing.Point(214, 19);
+            this.CheckBoxRango1.Location = new System.Drawing.Point(353, 6);
             this.CheckBoxRango1.Name = "CheckBoxRango1";
             this.CheckBoxRango1.Size = new System.Drawing.Size(15, 14);
             this.CheckBoxRango1.TabIndex = 8;
@@ -343,7 +345,7 @@
             this.DateTimePickerRango2.CustomFormat = "yyyy-MM-dd";
             this.DateTimePickerRango2.Enabled = false;
             this.DateTimePickerRango2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerRango2.Location = new System.Drawing.Point(374, 16);
+            this.DateTimePickerRango2.Location = new System.Drawing.Point(374, 26);
             this.DateTimePickerRango2.Name = "DateTimePickerRango2";
             this.DateTimePickerRango2.Size = new System.Drawing.Size(97, 20);
             this.DateTimePickerRango2.TabIndex = 7;
@@ -353,7 +355,7 @@
             this.DateTimePickerRango1.CustomFormat = "yyyy-MM-dd";
             this.DateTimePickerRango1.Enabled = false;
             this.DateTimePickerRango1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerRango1.Location = new System.Drawing.Point(235, 16);
+            this.DateTimePickerRango1.Location = new System.Drawing.Point(374, 3);
             this.DateTimePickerRango1.Name = "DateTimePickerRango1";
             this.DateTimePickerRango1.Size = new System.Drawing.Size(97, 20);
             this.DateTimePickerRango1.TabIndex = 6;
@@ -374,7 +376,9 @@
             this.PanelRegistroDeVentas.PerformLayout();
             this.PanelNuevoPago.ResumeLayout(false);
             this.PanelNuevoPago.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewRegVentaProd)).EndInit();
+            this.panelDataGridViewRegistroDeVenta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DatagridViewRegistroDeVentas)).EndInit();
             this.PanelBotonesRegisroDeVentas.ResumeLayout(false);
             this.PanelBotonesRegisroDeVentas.PerformLayout();
@@ -399,7 +403,7 @@
         public System.Windows.Forms.DataGridView DataGridViewRegVentaProd;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.DataGridView DatagridViewRegistroDeVentas;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelDataGridViewRegistroDeVenta;
         private System.Windows.Forms.Panel PanelBotonesRegisroDeVentas;
         private System.Windows.Forms.Button ButtonTodos;
         private System.Windows.Forms.Button ButtonDeudores;

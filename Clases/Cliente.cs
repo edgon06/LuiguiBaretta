@@ -38,5 +38,11 @@ namespace LuiguiBaretta
             Filtro = ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * from Cliente where " + salida_de_datos);
             vacio.DataSource = Filtro;
         }
+
+        public void EstablecerDatos(ref DataGridView vacio)
+        {
+            vacio.DataSource = Datos;
+            vacio.Columns[5].Width = 212;
+        }
     }
 }

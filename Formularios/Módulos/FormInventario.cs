@@ -10,7 +10,7 @@ namespace LuiguiBaretta.Formularios.Módulos
         public FormInventario(ref ToolStripTextBox Filtro)
         {
             InitializeComponent();
-            DataGridViewInventario.DataSource = Producto.Datos;
+            this.Producto.EstablecerDatos(ref DataGridViewInventario);
             Filtro.KeyPress += new KeyPressEventHandler(this.Filtrar);
         }
 
@@ -20,24 +20,18 @@ namespace LuiguiBaretta.Formularios.Módulos
             Producto.EstablecerFiltro(ref DataGridViewInventario, filtro.Text);
         }
 
-        private void PanelInventario_VisibleChanged(object sender, EventArgs e)
-        {
-            if (PanelInventario.Visible)
-                this.DataGridViewInventario.DataSource = Producto.Datos;
-        }
-
         private void ButtonNuevoProducto_Click(object sender, EventArgs e)
         {
             AnadirEditatProducto anadirEditatProducto = new AnadirEditatProducto("Agregar");
             anadirEditatProducto.ShowDialog();
-            this.DataGridViewInventario.DataSource = Producto.Datos;
+            this.Producto.EstablecerDatos(ref DataGridViewInventario);
         }
 
         private void ButtonEditarProducto_Click(object sender, EventArgs e)
         {
             AnadirEditatProducto anadirEditatProducto = new AnadirEditatProducto("Editar", ref this.DataGridViewInventario);
             anadirEditatProducto.ShowDialog();
-            this.DataGridViewInventario.DataSource = Producto.Datos;
+            this.Producto.EstablecerDatos(ref DataGridViewInventario);
         }
 
         private void DataGridViewInventario_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -52,7 +46,7 @@ namespace LuiguiBaretta.Formularios.Módulos
 
         private void ButtonVerTodosLosProductos_Click(object sender, EventArgs e)
         {
-            this.DataGridViewInventario.DataSource = Producto.Datos;
+            this.Producto.EstablecerDatos(ref DataGridViewInventario);
         }
 
         private void ButtonProductosAgotados_Click(object sender, EventArgs e)

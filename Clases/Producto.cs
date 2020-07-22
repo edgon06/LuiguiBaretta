@@ -6,7 +6,7 @@ namespace LuiguiBaretta
 {
     class Producto
     {
-        public DataTable Datos
+        private DataTable Datos
         {
             get { return ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * From Producto"); }
         }
@@ -58,6 +58,11 @@ namespace LuiguiBaretta
             }
             Filtro = ConsultasBaseDeDatos.ObtenerTablaDeBDLuiguibaretta("Select * from Producto where " + salida_de_datos);
             vacio.DataSource = Filtro;
+        }
+
+        public void EstablecerDatos(ref DataGridView vacio)
+        {
+            vacio.DataSource = Datos;
         }
     }
 }
